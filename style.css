@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: cadetblue;
+}
+.wrapper{
+    width: 770px;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+.wrapper .input-field{
+    z-index: -999;
+    opacity: 0;
+    position: absolute;
+}
+.wrapper .content-box{
+    padding: 13px 20px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.typing-text::-webkit-scrollbar{
+    width: 0;
+}
+.typing-text {
+    max-height: 255px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+.typing-text p{
+    font-size: 21px;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+.typing-text p span{
+    position: relative;
+}
+.typing-text p span.correct{
+    color: lightgreen;
+}
+.typing-text p span.incorrect{
+    color: darkred;
+    background: lightcoral;
+    outline: 1px solid #ffffff;
+    border-radius: 4px;
+}
+.typing-text p span.active{
+    color: lightblue;
+}
+.typing-text p span.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    opacity: 0;
+    background: lightblue;
+    animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink {
+    50%{
+        opacity: 1;
+
+    }
+}
+.content-box .content{
+    display: flex;
+    margin-top: 17px;
+    padding: 12px 0;
+    align-items: center;
+    border-top: 1px solid #cccccc;
+    justify-content: space-between;
+}
+.content button{
+    border: none;
+    outline: none;
+    width: 105px;
+    padding: 8px 0;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    background: cadetblue;
+    transition: transform 0.3s ease;
+}
+.content button:active{
+    transform: scale(0.97);
+}
+.content .result-details{
+    display: flex;
+    width: calc(100% - 140px);
+    justify-content: space-between;
+}
+.result-details li{
+    height: 22px;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.result-details li:not(:first-child) {
+    padding-left: 22px;
+    border-left: 1px solid #cccccc;
+}
+.result-details li p{
+    font-size: 19px;
+}
+.result-details li span{
+    display: block;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.result-details li:not(:first-child) span {
+    font-weight: 500;
+}
+.result-details li b{
+    font-weight: 500;
+}
+.help-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 200;
+}
+.help-icon {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #888;
+  color: cadetblue;
+  z-index: 10;
+}
+.pop-up {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 25px;
+  border-radius: 10px;
+  width: 900px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
+  overflow-y: auto;
+}
+.help-container:hover .pop-up {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+.pop-up h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+.tips-list {
+  padding-left: 18px;
+  font-size: 14px;
+  color: #444;
+}
+.tips-list li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+
