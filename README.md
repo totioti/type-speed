@@ -8,7 +8,7 @@
 
 ## Screenshot
 
-![Type Speed Screenshot](homepage.png) <!-- Add this image to your repo if available -->
+![Type Speed Screenshot](images/homepage.png) <!-- Add this image to your repo if available -->
 
 ## Features
 
